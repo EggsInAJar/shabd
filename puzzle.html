@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script>
+
+    </script>
+</head>
+<body>
+
+
+
+    
+
+   <div class="layer1">
+
+    <div class="wrapper" >
+        <img src="./assets/img/london-imgs/row-1-column-1.jpg" alt=""  id=1>
+        <img src="./assets/img/london-imgs/row-1-column-2.jpg" alt=""  id="15">
+        <img src="./assets/img/london-imgs/row-1-column-3.jpg" alt=""  id=2>
+        <img src="./assets/img/london-imgs/row-1-column-4.jpg" alt=""  id=3>
+        <img src="./assets/img/london-imgs/row-1-column-5.jpg" alt=""  id=4>
+        <img src="./assets/img/london-imgs/row-2-column-1.jpg" alt=""  id=5>
+        <img src="./assets/img/london-imgs/row-2-column-2.jpg" alt=""  id=6>
+        <img src="./assets/img/london-imgs/row-2-column-3.jpg" alt=""  id=7>
+        <img src="./assets/img/london-imgs/row-2-column-4.jpg" alt=""  id=8>
+        <img src="./assets/img/london-imgs/row-2-column-5.jpg" alt=""  id=9>
+        <img src="./assets/img/london-imgs/row-3-column-1.jpg" alt=""  id=10>
+        <img src="./assets/img/london-imgs/row-3-column-2.jpg" alt=""  id="11">
+        <img src="./assets/img/london-imgs/row-3-column-3.jpg" alt=""  id="12">
+        <img src="./assets/img/london-imgs/row-3-column-4.jpg" alt=""  id="14">
+        <img src="./assets/img/london-imgs/row-3-column-5.jpg" alt=""  id="16">
+        <img src="./assets/img/london-imgs/row-4-column-1.jpg" alt=""  id="17">
+        <img src="./assets/img/london-imgs/row-4-column-2.jpg" alt=""  id="18">
+        <img src="./assets/img/london-imgs/row-4-column-3.jpg" alt=""  id="19">
+        <img src="./assets/img/london-imgs/row-4-column-4.jpg" alt=""  id="20">
+        <img src="./assets/img/london-imgs/row-4-column-5.jpg" alt=""  id="21">
+        <img src="./assets/img/london-imgs/row-5-column-1.jpg" alt=""  id="22">
+        <img src="./assets/img/london-imgs/row-5-column-2.jpg" alt=""  id="23">
+        <img src="./assets/img/london-imgs/row-5-column-3.jpg" alt=""  id="24">
+        <img src="./assets/img/london-imgs/row-5-column-4.jpg" alt=""  id="13">
+        <img src="./assets/img/london-imgs/row-5-column-5.jpg" alt=""  id="25">
+
+   </div>
+   </div>
+   <center>
+        <button onclick="work()">Press</button>
+   </center>
+
+</body>
+
+
+<style>
+
+    body {
+        font-family: sans-serif;
+    }
+
+    .layer1 {
+        display: grid;
+
+    }
+    img {
+        width: 100%;
+        animation: drop 2s ease forwards;
+        opacity: 0;
+    }
+
+    @keyframes drop{
+        0%{opacity: 0}
+        70%{transform: translateY(10px)}
+        100%{transform: translateY(20px)}
+    }
+
+  
+
+    .wrapper {
+        width: 100vw;
+        height: 100vh;
+        display: grid;
+        grid-gap: 0px;
+        grid-template-rows: repeat(5, 1fr);
+        grid-template-columns: repeat(5, 1fr);
+        grid-auto-flow: row;
+        top: 0;
+        margin-left: -20px;
+    }
+
+    button {
+        z-index: 999;
+        bottom: 20;
+        margin-top: 15%;
+        height: 50px;
+		width: 150px;
+		border-radius: 10px;
+		background-color: rgb(0, 0, 0);
+		border: none;
+		color: rgb(255, 247, 247);
+		transition: 0.5s;
+		transition: top ease 0.5s;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        cursor: pointer;
+        transition-duration: 0.4s;
+    }
+
+    button:hover {
+        background-color: #f44242;
+        }
+
+    button:after {
+        opacity: 0;
+        transition: all 0.5s;
+        box-shadow: 0 0 10px 40px white;
+    }
+
+    button:active:after {
+        box-shadow: 0 0 0 0 rgb(155, 155, 155);
+        position: absolute;
+        border-radius: 4em;
+        opacity: 1;
+        transition: 0s;
+    }
+
+
+        
+
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+        background: rgb(83, 83, 83); 
+    }
+    
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: black; 
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: rgb(32, 32, 32); 
+    }
+
+
+
+</style>
+
+<script>
+
+
+    var counter = 1;
+    function work () {
+
+        if (counter == 26) {
+            console.log("finished")
+        } else {
+            document.getElementById(`${counter}`).style.opacity = 1;
+            counter ++
+            console.log(counter)
+        }
+    }
+
+
+
+</script>
+
+
+</html>

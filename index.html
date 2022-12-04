@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Welcome to London!</title>
+</head>
+<body style="background-image: url('./assets/img/benjamin-davies-Oja2ty_9ZLM-unsplash.jpg'); background-size: cover;">
+	<div class="content">
+		<div class="title-box">
+				<h1 class="title">Welcome to London!</h1>
+		</div>
+		<center>
+			<a href="puzzle.html"><button>Go!</button></a>
+
+		</center>
+	</div>
+</body>
+
+<style>
+	body {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-family: sans-serif;
+	}
+
+
+	.title {
+		font-weight: 100;
+		font-size: 70px;
+		margin-top: 40%;
+
+	}
+
+	button {
+		height: 50px;
+		width: 150px;
+		border-radius: 10px;
+		background-color: rgb(0, 0, 0);
+		border: none;
+		color: rgb(255, 248, 248);
+		transition: 0.5s;		
+		animation: fadeIn 2s;
+	}
+
+	@keyframes fadeIn {
+ 		0% { opacity: 0; }
+  		100% { opacity: 1; }
+	}
+
+
+	button:hover {
+		cursor: pointer;
+		box-shadow: 0 0 3px rgb(194, 0, 0);
+		background-color: rgb(224, 26, 26);
+		top: -10px;
+	}
+</style>
+</html>
