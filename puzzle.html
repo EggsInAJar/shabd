@@ -48,14 +48,46 @@
 
    </div>
    </div>
+   <div class="pyro" id="pyro" style="top: 20%; position: fixed; left: 50%;">
+    <div class="before"></div>
+    <div class="after"></div>
+  </div>
+  <div class="pyro" id="pyro" style="top: 20%; position: fixed; left: 80%;">
+    <div class="before"></div>
+    <div class="after"></div>
+  </div>
+  <div class="pyro" id="pyro" style="top: 20%; position: fixed; left: 20%;">
+    <div class="before"></div>
+    <div class="after"></div>
+  </div>
+  
+
+    <div class="model" id="model" style=" display: flex; height: 30%; width: 20%;  position: absolute; top: 30%; left: 40%; margin-top: -50; margin-left: -50; align-items: center; justify-content: center; display: none; ">
+            <h1 style="text-align: center; margin-top: 25.7%;">Congradulations!<br>You did it!</h1>
+
+   </div>
    <center>
         <button onclick="work()">Press</button>
-   </center>
+   </center>            
+
+   
 
 </body>
 
 
 <style>
+
+    .pyro {
+        display: none;
+    }
+
+    .model {
+        box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;        animation: drop 1s ease forwards;
+        background-color: black;
+        color: white;
+        border-radius: 30px;
+    
+    }
 
     body {
         font-family: sans-serif;
@@ -67,14 +99,14 @@
     }
     img {
         width: 100%;
-        animation: drop 2s ease forwards;
-        opacity: 0;
+        animation: drop 1s ease forwards;
+        display: none;
     }
 
     @keyframes drop{
         0%{opacity: 0}
-        70%{transform: translateY(10px)}
-        100%{transform: translateY(20px)}
+        70%{transform: translateY(500px)}
+        100%{transform: translateY(5px)}
     }
 
   
@@ -116,7 +148,7 @@
 
     button:after {
         opacity: 0;
-        transition: all 0.5s;
+        transition: all 1s;
         box-shadow: 0 0 10px 40px white;
     }
 
@@ -129,23 +161,18 @@
     }
 
 
-        
-
     ::-webkit-scrollbar {
         width: 10px;
     }
 
-    /* Track */
     ::-webkit-scrollbar-track {
         background: rgb(83, 83, 83); 
     }
     
-    /* Handle */
     ::-webkit-scrollbar-thumb {
         background: black; 
     }
 
-    /* Handle on hover */
     ::-webkit-scrollbar-thumb:hover {
         background: rgb(32, 32, 32); 
     }
@@ -158,14 +185,22 @@
 
 
     var counter = 1;
+    var array = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24, 25];
+
     function work () {
 
+        var num = Math.floor(Math.random() * array.length);
+        var roll = array.splice(num, 1);
+
+
         if (counter == 26) {
+            document.getElementById("pyro").style.display = "block";
+            document.getElementById("model").style.display = "block";
             console.log("finished")
         } else {
-            document.getElementById(`${counter}`).style.opacity = 1;
-            counter ++
-            console.log(counter)
+            document.getElementById(`${roll[0]}`).style.display = "block";
+            counter++
+            console.log("counter:"+ counter)
         }
     }
 
